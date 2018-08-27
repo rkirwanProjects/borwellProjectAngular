@@ -1,7 +1,8 @@
 var calculatorApp = angular.module('calculatorApp', ['ngRoute']);
 
-calculatorApp.config(['$routeProvider', function($routeProvider, $locationProvider){
+calculatorApp.config(['$routeProvider' '$locationProvider', function($routeProvider, $locationProvider){
 
+    $locationProvider.html5html5mode(true);
     /*Directs the user to the right url*/
     $routeProvider
         .when('/home', {
