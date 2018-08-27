@@ -1,0 +1,16 @@
+h1 {
+  background-color: red;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+#inputs {
+  background-color: #C9D0DB;
+  margin: auto;
+  width: 40%;
+}

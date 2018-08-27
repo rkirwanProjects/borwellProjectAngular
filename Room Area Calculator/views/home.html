@@ -1,0 +1,23 @@
+<h1>Room Area Calculator</h1>
+      <div class="content">
+          <p>Insert the measurments (in metres) of the room to calculate the floor area, the volume of the room and the amount of paint required to paint all the walls. All inputs and outputs are to two decimal places.</p>
+          <p>MY ASSUMPTIONS
+          <p>1: The room does not have any windows or doors.
+          <p>2: The room does not have a sloping roof or floor.
+          <p>3: The room is either a square or rectangle shape.
+          <p>4: Opposite walls are the same width and length.
+          <form name="myForm" novalidate>
+            <div id ="inputs">
+              <br>
+              <p>Width: <input type="number" name="Width" placeholder="0.00" ng-model ="width" min="0.01" step="0.01" onkeypress="return validateInput(event, this);" required/></p>
+              <p>Length: <input type="number" name ="Length" placeholder="0.00" ng-model ="length" min="0.01" step="0.01" onkeypress="return validateInput(event, this);" required/></p>
+              <p>Height: <input type="number" name = "Height" placeholder="0.00" ng-model ="height" min="0.01" step="0.01" onkeypress="return validateInput(event, this);" required/></p>
+              <br>
+            </div>
+              <p ng-show="myForm.Width.$valid && myForm.Length.$valid">Floor Area: {{width * length | number:2}} m²</p>
+            <div id ="outputs" ng-show="myForm.Width.$valid && myForm.Length.$valid && myForm.Height.$valid">
+              <p>Room Volume: {{width * length * height | number:2}} m³</p>
+              <p>Amount of paint required: {{(height * width *2) + (height * length * 2) | number:2}} m²</p>
+            </div>
+          </form>
+      </div>
