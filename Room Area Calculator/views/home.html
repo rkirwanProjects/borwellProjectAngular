@@ -6,6 +6,7 @@
           <p>2: The room does not have a sloping roof or floor.
           <p>3: The room is either a square or rectangle shape.
           <p>4: Opposite walls are the same width and length.
+          <!--Form to take user inputs and give outputs-->
           <form name="myForm" novalidate>
             <div id ="inputs">
               <br>
@@ -14,6 +15,7 @@
               <p>Height: <input type="number" name = "Height" placeholder="0.00" ng-model ="height" min="0.01" step="0.01" onkeypress="return validateInput(event, this);" required/></p>
               <br>
             </div>
+              <!--Will show if all the inputs are valid-->
               <p ng-show="myForm.Width.$valid && myForm.Length.$valid">Floor Area: {{width * length | number:2}} m²</p>
             <div id ="outputs" ng-show="myForm.Width.$valid && myForm.Length.$valid && myForm.Height.$valid">
               <p>Room Volume: {{width * length * height | number:2}} m³</p>

@@ -1,9 +1,8 @@
 var calculatorApp = angular.module('calculatorApp', ['ngRoute']);
 
-calculatorApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+calculatorApp.config(['$routeProvider', function($routeProvider, $locationProvider){
 
-    $locationProvider.html5Mode(true);
-
+    /*Directs the user to the right url*/
     $routeProvider
         .when('/home', {
             templateUrl: 'views/home.html'
@@ -13,6 +12,7 @@ calculatorApp.config(['$routeProvider', '$locationProvider', function($routeProv
 
 }]);
 
+/*Takes the input of a nokeypress event and only allows user to enter numbers and one deciaml place*/
 function numberOnly(evt, input){
   var charCode = (evt.which) ? evt.which : event.keyCode;
   if (charCode > 31 && (charCode < 46 || charCode == 47 || charCode > 57)){
@@ -24,6 +24,7 @@ function numberOnly(evt, input){
   return true;
 }
 
+/*Only allows the user to enter up to decimal places*/
 function setTwoNumberDecimal(input){
   var numbers = input.value.split('.');
   console.log("numbers.length = " + numbers.length);
